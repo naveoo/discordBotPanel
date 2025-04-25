@@ -1,0 +1,189 @@
+@font-face {
+    font-family: "GG Sans";
+    src: url("../assets/fonts/gg-sans/gg sans Regular.ttf") format("truetype");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "GG Sans";
+    src: url("../assets/fonts/gg-sans/gg sans Bold.ttf") format("truetype");
+    font-weight: bold;
+    font-style: normal;
+}
+  
+@font-face {
+    font-family: "Uni Sans";
+    src: url("../assets/fonts/uni-sans/Uni Sans Heavy.otf") format("opentype");
+    font-weight: 800;
+    font-style: normal;
+}
+
+:root {
+    --white : #e2e2e2;
+    --blue : #7289da;
+    --light-gray : #424549;
+	--gray : #36393e;
+    --dark-gray : #282b30;
+    --black : #1e2124;
+}
+
+body {
+    padding: 0;
+    margin: 0;
+    color: var(--white);
+    background-color: var(--gray);
+    font-family: 'GG Sans', Arial, Helvetica, sans-serif;
+}
+
+::-webkit-scrollbar {
+    width: 15px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--gray)
+}
+  
+::-webkit-scrollbar-thumb {
+    background: var(--blue);
+    border-radius: 30px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #96a6dd;
+}
+
+#content {
+    z-index: -1;
+    position: absolute;
+    left: 60px;
+    right: 0;
+    bottom: 0;
+    top: 0;
+}
+#content h1 {
+    font-family: "Uni sans", Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+#sidebar {
+    position: fixed;
+    left: 0;
+    top: 0;
+    height: 100vh;
+    background-color: var(--dark-gray);
+    width: 60px;
+    transition: width 0.3s ease;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: bold;
+}
+
+#sidebar.expanded {
+    width: 200px;
+}
+#sidebar.expanded #menu-list li {
+    background-color: var(--gray);
+}
+
+#hamburger-btn {
+    margin: 1rem 0;
+    background: none;
+    border: none;
+    cursor: pointer;
+    transition: all 0.3s;
+}
+
+#hamburger-btn img {
+    width: 24px;
+}
+#sidebar.expanded #hamburger-btn {
+    transform: rotate(90deg);
+}
+#sidebar.expanded #hamburger-btn:hover {
+    transform: rotate(180deg);
+}
+
+#hamburger-btn:hover {
+    transform: rotate(90deg);
+}
+
+#menu-list {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+    width: 100%;
+    flex-direction: column;
+    display: flex;
+    height: 100%;
+}
+
+#sidebar hr {
+    width: 80%;
+}
+
+#menu-list li {
+    font-family: 'GG Sans', Arial, Helvetica, sans-serif;
+    font-weight: bold;
+    display: flex;
+    align-items: center;
+    padding: 1rem;
+    cursor: pointer;
+    transition: all 0.2s;
+    border-radius: 50px;
+    margin: 2%;
+}
+
+#menu-list li:last-child {
+    margin-top: auto;
+}
+
+#menu-list li:hover {
+    border-left: solid var(--white) 5px;
+}
+
+#menu-list img {
+    width: 24px;
+    margin-right: 1rem;
+}
+
+.menu-text {
+    white-space: nowrap;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    color: white;
+    font-family: sans-serif;
+}
+
+#sidebar.expanded .menu-text {
+    opacity: 1;
+}
+
+#pieces {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1rem;
+    justify-content: center;
+    padding: 1rem;
+}
+
+.card {
+    cursor: pointer;
+    width: 200px;
+    background-color: var(--dark-gray);
+    border: 1px solid var(--white);
+    border-radius: 8px;
+    text-align: center;
+    padding: 1rem;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    transition: all 0.3s;
+}
+
+.card:hover {
+    background-color: var(--light-gray);
+}
+
+.card img {
+    width: 100px;
+}
